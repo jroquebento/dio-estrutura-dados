@@ -1,21 +1,22 @@
 package one.digitalinnovation;
 
-public class Fila {
-    private No refNoEntradaFila;
+public class Fila<T> {
+
+    private No<T> refNoEntradaFila;
 
     public Fila(){
         this.refNoEntradaFila = null;
     }
 
-    public void enqueue(Object obj){
-        No novoNo = new No(obj);
+    public void enqueue(T object){
+        No<T> novoNo = new No<T>(object);
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
 
     public Object first(){
         if(!this.isEmpty()){
-            No primeiroNo = refNoEntradaFila;
+            No<T> primeiroNo = refNoEntradaFila;
             while(true){
                 if(primeiroNo.getRefNo() != null){
                     primeiroNo = primeiroNo.getRefNo();
@@ -31,8 +32,8 @@ public class Fila {
 
     public Object dequeue(){
         if(!this.isEmpty()){
-            No primeiroNo = refNoEntradaFila;
-            No noAuxiliar = refNoEntradaFila;
+            No<T> primeiroNo = refNoEntradaFila;
+            No<T> noAuxiliar = refNoEntradaFila;
             while(true){
                 if(primeiroNo.getRefNo() != null){
                     noAuxiliar = primeiroNo;
@@ -55,7 +56,7 @@ public class Fila {
     @Override
     public String toString() {
         String stringRetorno = "";
-        No noAuxiliar = refNoEntradaFila;
+        No<T> noAuxiliar = refNoEntradaFila;
 
         if(refNoEntradaFila != null){
             while(true){
