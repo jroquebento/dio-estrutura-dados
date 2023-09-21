@@ -1,2 +1,2 @@
 # dio-estrutura-dados
-Repositório dos exemplos usados nas aulas do curso de estrutura de dados em Java
+Repositório com os exemplos utilizados nas aulas do curso de estrutura de dados em Java da DIO.
